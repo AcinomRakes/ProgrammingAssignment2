@@ -7,8 +7,10 @@
 makeCacheMatrix <- function(x = matrix()) {         ## x gets initialized as a formal argument
     inv <- NULL                                     ## inv to contain the inverse matrix initialized as NULL
     set <- function(y) {                            ## to allow for resetting the value with a new matrix
-        x <<- y
+        x <<- y                                     
         inv <<- NULL
+            ## '<<-' assignment operator used to assign values to 'x' and 'inv' 
+            ## present in a different environment (here, parent environment)
     }
     get <- function() x                             ## function to get matrix x 
     setinv <- function(inverse) inv <<- inverse
